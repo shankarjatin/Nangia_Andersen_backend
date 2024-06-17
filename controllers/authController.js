@@ -25,6 +25,7 @@ exports.register = async (req, res) => {
     jwt.sign(payload, 'your_jwt_secret', { expiresIn: 3600 }, (err, token) => {
       if (err) throw err;
       res.json({ token });
+      console.log(token);
     });
   } catch (err) {
     console.error(err.message);
